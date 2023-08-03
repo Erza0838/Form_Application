@@ -1,0 +1,374 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Login_Form_Container
+{   
+    border-radius: 10px;
+    margin-top: 7vh;
+    margin-left:  calc(33vmax - 18px);
+    box-sizing: border-box;
+    display: grid;
+    grid-auto-rows: 10rem;
+    justify-items: center;
+    align-items: center;
+    width: 67vmin;
+    height: calc(25vmax + 6rem * 2);
+    background: linear-gradient(20deg, rgba(120, 89, 100, 1.0), rgba(19,90,141,1));
+}
+
+/* Input name section */
+div.Input-Name
+{
+    display: grid;
+    gap: 1vh;
+    justify-content: start;
+    align-content: start;
+    grid-template-rows: auto auto;
+    margin-top: 37vh;
+}
+
+.Input-Name > label
+{
+    color: azure;
+    font-size: 1.6vw;
+}
+
+input.Input_Type_Name
+{   
+    /* width: calc(20vw - 2rem);    */
+    width: 17vmax;   
+    height: 4vh;
+    border: none;
+    border-radius: 5px;
+}
+
+input.Input_Type_Name:focus
+{
+    outline: none;
+}
+/* End of input name section */
+
+/* Input age section */
+div.Input-Age
+{
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto auto;
+    justify-content: start;
+    align-content: start;
+    transform: translate(0,5vh);
+}
+
+.Input-Age > label
+{
+    color: azure;
+    font-size: 1.6vw;
+}
+
+input.Input_Type_Age
+{   
+    width: calc(20vw - 2rem);   
+    height: 4vh;
+    border: none;
+    border-radius: 5px;
+}
+
+input.Input_Type_Age:focus 
+{
+    outline: none;
+}
+/* End of input age section */
+
+/* Select gender section */
+div.Input-Gender
+{
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto auto;
+    justify-content: start;
+    align-content: start;
+    transform: translate(0,8vh);
+}
+
+.Input-Gender > label
+{
+    color: azure;
+    font-size: 1.6vw;
+}
+
+select.Select_Type_Gender
+{
+    width: calc(16vw - 2rem);   
+    height: 4vh;
+    border: none;
+    border-radius: 5px;
+}
+
+select.Select_Type_Gender:focus
+{
+    outline: none;
+}
+/* End of input gender section */
+
+/* Input email section */
+div.Input-Email
+{
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto auto;
+    justify-content: start;
+    align-content: start;
+    transform: translate(0,10vh);
+}
+
+.Input-Email > label
+{
+    color: azure;
+    font-size: 1.6vw;
+}
+
+input.Input_Type_Email
+{
+    width: calc(20vw - 2rem);   
+    height: 4vh;
+    border: none;
+    border-radius: 5px;
+}
+
+input.Input_Type_Email:focus
+{
+    outline: none;
+}
+/* End of Input email section */
+
+/* Select user level section */
+div.Input-Level
+{
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto auto;
+    justify-content: start;
+    align-content: start;
+    transform: translate(0,12vh);
+}
+
+.Input-Level > label
+{
+    color: azure;
+    font-size: 1.6vw;
+}
+
+select.Select_Level_Type
+{
+    width: calc(16vw - 2rem);   
+    height: 4vh;
+    border: none;
+    border-radius: 5px;
+}
+
+select.Select_Level_Type:focus
+{
+    outline: none;
+}
+/* End of Select user level section */
+
+/* Login button section */
+.Login_Button
+{
+    display: inline-block;
+    transform: translate(0,15vh);
+    width: calc(10vw - 2rem);   
+    height: 4vh;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.3vw;
+}
+/* End of  Login button section*/
+
+/* Media query sction  min width and min hight*/
+@media screen and (width < 820px) and (height < 900px)
+{
+    body
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: rgba(191, 191, 191, .8);
+    }
+    .Login_Form_Container
+    {   
+        border-radius: 10px;
+        margin-top: 10vmax;
+        margin-left: 18vw;
+        box-sizing: border-box;
+        display: flex;
+        display: grid;
+        grid-auto-rows: 10rem;
+        justify-items: center;
+        align-items: center;
+        /* width: 67vmin; */
+        width: 40vmax;
+        /* height: 80vmax; */
+        /* height: 90vmin; */
+        height: 71vmax;
+        background: linear-gradient(20deg, rgba(120, 89, 100, 1.0), rgba(19,90,121,1),rgba(120, 89, 100, 1.0));
+    }
+
+    /* Input name section */
+    div.Input-Name
+    {
+        display: grid;
+        /* gap: .8rem; */
+        gap: 1vmin;
+        justify-content: start;
+        align-content: start;
+        grid-template-rows: auto auto;
+        transform: translate(10%,0);
+    }
+    .Input-Name > label
+    {
+        color: azure;
+        font-size: 3vmax;
+    }
+
+    input.Input_Type_Name
+    {   
+        display: block;
+        /* width: 40vw;    */
+        width: 29vmax;
+        height: 4vh;
+        border: none;
+        border-radius: 5px;
+        /* padding-left: 10rem; */
+    }
+    /* End of input name section */
+
+    /* Input age section */
+    div.Input-Age
+    {
+        display: grid;
+        /* gap: 1rem; */
+        gap: 1vmin;
+        grid-template-rows: auto auto;
+        justify-content: start;
+        align-content: start;
+        transform: translate(10%,20%);
+    }
+
+    .Input-Age > label
+    {
+        color: azure;
+        font-size: 3vmax;
+    }
+
+    input.Input_Type_Age
+    {   
+        /* width: 40vw; */
+        width: 29vmax;
+        height: 4vh;
+        border: none;
+        border-radius: 5px;
+    }
+    /* End of input age section */
+
+    /* Select gender section */
+    div.Input-Gender
+    {   
+        display: grid;
+        /* gap: .8rem; */
+        gap: 1vmin;
+        justify-content: start;
+        align-content: start;
+        grid-template-rows: auto auto;
+        transform: translate(10%,6vh);
+    }
+
+    .Input-Gender > label
+    {
+        color: azure;
+        font-size: 3vmax;
+    }
+
+    select.Select_Type_Gender
+    {
+        /* width: 20vw; */
+        width: 29vmax;
+        height: 4vh;
+        border: none;
+        border-radius: 5px;
+    }
+    /* Select age section */
+
+    /* Input email section */
+    div.Input-Email
+    {
+        display: grid;
+        /* gap: 1rem; */
+        gap: 1vmin;
+        grid-template-rows: auto auto;
+        justify-content: start;
+        align-content: start;
+        transform: translate(10%,7vh);
+    }  
+
+    .Input-Email > label
+    {
+        color: azure;
+        font-size: 3vmax;
+    }
+
+    input.Input_Type_Email
+    {
+        /* width: 40vw; */
+        width: 29vmax;
+        height: 4vh;
+        border: none;
+        border-radius: 5px;
+    }
+    /* End of Input email section */ 
+    div.Input-Level
+    {
+        display: grid;
+        /* gap: .8rem; */
+        gap: 1vmin;
+        justify-content: start;
+        align-content: start;
+        grid-template-rows: auto auto;
+        transform: translate(10%,8vh);
+    }
+
+    .Input-Level > label
+    {
+        color: azure;
+        font-size: 3vmax;
+    }
+
+    select.Select_Level_Type
+    {
+        /* width: 20vw; */
+        width: 29vmax;
+        height: 4vh;
+        border: none;
+        border-radius: 5px;
+    }
+    /* Select user level section */
+
+    /* Login button section */
+    .Login_Button
+    {
+        display: inline-block;
+        transform: translate(10%,14vh);
+        width: 20vw;
+        height: 4vh;
+        border: none;
+        border-radius: 5px;
+        color: black;
+        font-size: 2vmax;
+    }
+/* End of  Login button section*/
+}
