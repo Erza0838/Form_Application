@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8" content="origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>
+        Halaman login
+    </title>
+    <!-- <link rel="stylesheet" href="../public/Login_Layout.css"> -->
+    <link rel="stylesheet" href="/Login_Layout.css">
+</head>
+<body>
+    
+    <!-- Container untuk membungkus form login -->
+    <div class="Login_Form_Container">
+        <!-- <form action="/AdminPage" method="POST"> -->
+        <form action="/AdminPost" method="POST">
+        <!-- <form action="/AdminPage" method="POST"> -->
+            <!-- Input name -->
+            <div class="Input-Name">
+                <label>Masukkan nama</label>   
+                <input type="text" name="UserInputName" id="UserInputNameId" class="Input_Type_Name" required autocomplete="off">
+            </div>
+
+            <!-- Input age -->
+            <div class="Input-Age">
+                <label>Masukkan umur</label>
+                <input type="number" name="UserInputAge" id="UserInputAgeId" class="Input_Type_Age" required autocomplete="off">
+            </div>
+            
+            <!-- Select gender -->
+            <div class="Input-Gender">  
+                <label >Jenis kelamin</label>
+                <select name="UserInputGenders" id="UserInputGendersId" class="Select_Type_Gender" required>
+                    <option value=""></option>
+                    <option value="Perempuan">perempuan</option>
+                    <option value="Laki - laki">Laki - laki</option>
+                </select>
+            </div>
+
+            <!-- Input email -->
+            <div class="Input-Email">
+                <label >Masukkan email</label>
+                <input type="email" name="UserInputEmails" id="UserInputEmailId" class="Input_Type_Email" required autocomplete="off">
+            </div> 
+
+              <!-- Select Level -->
+              <div class="Input-Level">  
+                <label >Level</label>
+                <select name="UserInputLevels" id="UserInputLevelsId" class="Select_Level_Type" required>
+                    <option value=""></option>
+                    <option value="User">User</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+
+            <!-- Login button -->
+            <button class="Login_Button" id="SubmitLoginButton" name="UserSubmitData" type="submit">
+                Login
+            </button>
+        </form>
+    </div>
+
+    <script type="module">
+
+    // Variable for save tag input data section
+    const UserNameInputElement = document.getElementsByName("UserInputName").value
+    const UserInputAgeElement = document.getElementsByName("UserInputAge").value
+    const UserSelectGendersElement = document.getElementsByName("UserInputGenders").value
+    const UserInputEmailElement = document.getElementsByName("UserInputEmails").value
+    const UserSelectLevelsElement = document.getElementsByName("UserInputLevels").value
+    const SubmitLoginButton = document.getElementById("SubmitLoginButton")
+    // end of input data section
+
+    // Class for object template input tag
+    class InputValidation
+    {
+        constructor(ButtonSubmit)
+        {   
+            this.SubmitEvent = ButtonSubmit
+        }
+        EnabledLoginButton()
+        {   
+            this.SubmitEvent.addEventListener("submit", async () =>
+            {   
+                // this.SubmitEvent.preventDefault()
+                const ResponseResult = await fetch("http://localhost:3001/Login", 
+                {
+                    // method: "GET",
+                    method: "POST",
+                    headers: 
+                    {
+                        "Content-Type" : "application/json"
+                    },
+                    body: JSON.parse(
+                    JSON.stringify(
+                    {
+                        InputName : UserNameInputElement,
+                        InputAge : UserInputAgeElement,
+                        SelectGenders : UserSelectGendersElement,
+                        InputEmail : UserInputEmailElement,
+                        SelectLevels : UserSelectLevelsElement
+                    }))
+                }).then( (ResponseResultInput) => 
+                {   
+                    console.log(ResponseResultInput.json())
+                    return ResponseResultInput.json()
+                })
+            }, {once: true})     
+        }
+        // End of method
+    }
+    // Last class part
+
+    // Function to run method enabled login button
+    // async 
+    function InputValidationCorrect()
+    {
+        let EnterInputDataArguments = new InputValidation(SubmitLoginButton)
+        EnterInputDataArguments.EnabledLoginButton() 
+    }
+    InputValidationCorrect()
+    </script>
+
+</body>
+</html>

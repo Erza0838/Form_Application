@@ -1,0 +1,68 @@
+body
+{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(228, 176, 176, .7);
+    /* background-color: white; */
+}
+
+/* Header section */
+.Admin_Form_Header
+{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 5vh;
+    justify-content: space-evenly;
+    height: 10vmin;
+    background: linear-gradient(20deg, rgba(120, 89, 100, 1.0), rgba(19,90,141,1));
+    box-sizing: border-box;
+}
+
+h4
+{
+    color: white;
+    font-size: 2.5vmin;
+}
+/* End of Header section */
+
+/* From to create question section */
+.Form_Title_Container
+{   
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: auto auto;
+    /* row-gap: -30px; */
+    row-gap: 1vh;
+    transform: translate(33vw, 10vh);
+    /* transform: translate(19vmax, 10vh); */
+    /* top right bottom left*/
+    padding: 1vmin 0 1vmin 0;
+    width: 40vmax;
+    height: 12rem;
+    border-top: 1vmin solid rgb(224, 104, 57);
+    border-radius: .7rem;
+    background: linear-gradient(20deg, rgba(120, 89, 100, 1.0), rgba(19,90,141,1));
+}
+
+.Create_Title_Quis
+{
+    margin-top: -4%;
+    height: 2.3rem;
+    min-width: 30vw;
+    box-sizing: border-box;
+}
+
+.Create_Description_Quis
+{      
+    transform: translate(0, -40%);
+    height: 2.3rem;
+    min-width: 30vw;
+    box-sizing: border-box;
+}
+
+input:focus 
+{
+    outline: none;
+}
+/* End From to create question section */
