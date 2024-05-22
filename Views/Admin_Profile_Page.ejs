@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Halaman profile admin
+    </title>
+        <link rel="stylesheet" href="/Admin_Profile_Layout.css">
+
+    <% if ( typeof scripts !== "undefined") { %>
+        <% scripts.forEach(function(script) { %>
+        <script src="/AdminProfileAutoRefresh.js" type="module" defer></script>
+        <% }) %>
+    <% } %>
+</head>
+<body> 
+    <div class="Welcome_Admin_Container">
+        <% AdminInformation.forEach((ProfileInformation) => { %>
+        <h1 class="Welcome_Admin">Selamat datang <%= ProfileInformation.Admin_Name %></h1> 
+        <% }) %>
+    </div>
+
+    <!-- Admin information -->
+    <div class="Admin_List_Information_Container">
+        <div class="Admin_List_Information">    
+            <ul class="List_Information_Container">
+                <li>
+                    <label>Nama</label>
+                    <% AdminInformation.forEach((ProfileInformation) => { %>
+                    <input type="text" name="ShowAdminName" class="Admin_Name_Value" id="InputValueAge" value=<%= ProfileInformation.Admin_Name %> disabled>
+                    <% }) %>
+                </li>
+
+                <li>
+                    <label>Umur</label>
+                    <% AdminInformation.forEach((ProfileInformation) => { %>
+                    <input type="number" name="ShowAdminAge" class="Admin_Name_Value" id="InputValueAge" value=<%= ProfileInformation.Admin_Age %> disabled>
+                    <% }) %>
+                </li>
+
+                <li class="Gender_List_Item">
+                    <label>Jenis kelamin</label>
+                    <% AdminInformation.forEach((ProfileInformation) => { %>
+                    <input type="text" name="ShowAdminGender" class="Admin_Name_Value" id="InputValueGender" value=<%= ProfileInformation.Admin_Gender %> disabled>
+                    <% }) %>
+                </li>
+
+                <li>
+                    <label>Email</label>
+                    <% AdminInformation.forEach((ProfileInformation) => { %>
+                    <input type="text" name="ShowAdminEmail" class="Admin_Name_Value" id="InputValueEmail" value=<%= ProfileInformation.Admin_Email %> disabled>
+                    <% }) %>
+                </li>
+
+                <li>
+                    <label>Level</label>
+                    <% AdminInformation.forEach((ProfileInformation) => { %>
+                    <input type="text" class="Admin_Name_Value" id="InputValueLevel" value=<%= ProfileInformation.User_Level %> disabled>
+                    <% }) %>
+                </li>
+
+                <li>
+                    <label>Kode</label>
+                    <% AdminInformation.forEach((ProfileInformation) => { %>
+                    <input type="text" class="Admin_Name_Value" id="InputValueRandomCode" value=<%= ProfileInformation.Admin_Code %> disabled>
+                    <% }) %>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Logout and edit button -->
+    <div class="Button_Container">
+        <a href="/Login">
+            <button id="LogoutButtonAdmin">
+                Logout
+            </button>
+        </a>
+
+        <a href="/EditAdminProfile">
+            <button id="AdminEditButton">
+                Edit
+            </button>
+        </a>
+    </div>
+</body>
+</html>

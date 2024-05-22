@@ -1,29 +1,248 @@
+:root
+{
+    --PlaceHolderColor : rgba(180,180,180);
+}
+
 body
 {
     padding: 0;
     margin: 0;
-    background-color: rgb(228, 176, 176, .7);
-    /* background-color: white; */
+    background-color: rgba(191, 191, 191, .8);
 }
 
-/* Header section */
+select:focus
+{
+    outline: none;
+}
+
+textarea 
+{
+    resize: none;
+}
+
+textarea:focus 
+{
+    outline: none;
+    place-content: "pertanyaan";
+}
+
+::placeholder
+{
+    color: rgba(71, 71, 71, .8);
+    /* color: red; */
+    font-weight: normal;
+}
+
+/* Class for admin information*/
+.Admin_Form_Information_Header
+{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 6vh;
+    display: flex;
+    justify-content: space-evenly;
+    height: 10vmin;
+    background: rgba(19,90,141,1);
+    box-sizing: border-box;
+    /* position: relative; */
+}
+.Share-Button
+{
+    cursor: pointer;
+    display: inline-block;
+    height: 4vh;
+    width: 9vw;
+    transform: translate(0,2vh);
+    color: rgba(19,90,141,1);
+    font-weight: bold;
+    font-size: 1.3vmax;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box; 
+    /* position: relative; */
+}
+/* End Class for admin information part*/
+
 .Admin_Form_Header
 {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    column-gap: 5vh;
+    gap: 15vw;
     justify-content: space-evenly;
     height: 10vmin;
-    background: linear-gradient(20deg, rgba(120, 89, 100, 1.0), rgba(19,90,141,1));
+    background: rgba(19,90,141,1);
     box-sizing: border-box;
 }
 
 h4
 {
     color: white;
-    font-size: 2.5vmin;
+    font-size: 1.2vmax;
+    cursor: pointer;
 }
 /* End of Header section */
+
+/* Class warning message if title to long */
+.Title_Warning_Container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 35vmax;
+    z-index: 3;
+}
+
+.Warning_Title
+{   
+    display: flex;
+    margin-top: -50vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vmax;    
+    color: white;
+    background-color: rgb(224, 104, 57);
+    height: 10vh;
+    width: 30vw;
+}
+/* End message */
+
+/* Class warning message if description to long */
+.Description_Warning_Container 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 35vmax;
+    z-index: 3;
+}
+
+.Warning_Description
+{
+    display: flex;
+    margin-top: -50vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vmax;
+    color: white;
+    background-color: rgb(224, 104, 57);
+    height: 10vh;
+    width: 30vw;
+}
+/* End warning message */
+
+.Create_Question_Options_Container
+{
+    display: flex;
+    flex-direction: column;
+    transform: translate(6vw,-35vh);
+    z-index: 1;
+    gap: 1vmin;
+    position: absolute;
+    border-radius: 8px;
+    background-color: rgba(19,90,141,1);
+    padding: 1em 1em 1em 1em;
+    width: 10vw;
+    height: 15vh;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+.Options_Container 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 1vw;
+}
+
+p
+{   
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-basis: auto;
+    margin-left: 1rem;
+    color: white;
+    font-size: 1vw;
+    margin-left: -1vw;
+}
+
+.Options_Question:hover
+{
+    background-color: white;
+    color: rgba(19,90,141,1);
+    padding: 3px 3px 3px 3px;
+    box-sizing: border-box;
+    width: 10vw;
+    height: 5vh;
+    padding: 2.5% 2.5% 2.5% 2.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    transition: 900ms;
+    -webkit-transition: 900ms;
+    -moz-transition: 900ms;
+    -ms-transition: 900ms;
+    -o-transition: 900ms;
+    z-index: 2;
+}
+
+.Options_Insert_Image:hover
+{
+    background-color: white;
+    color: rgba(19,90,141,1);
+    padding: 3px 3px 3px 3px;
+    box-sizing: border-box;
+    width: 10vw;
+    height: 5vh;
+    padding: 2.5% 2.5% 2.5% 2.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    transition: 900ms;
+    -webkit-transition: 900ms;
+    -moz-transition: 900ms;
+    -ms-transition: 900ms;
+    -o-transition: 900ms;
+    z-index: 2;
+}
+
+.Plus_Icon
+{
+    width: 4vmin;
+    height: 5vmin;
+}
+
+.Image_Icon
+{
+    width: 4vmin;
+    height: 5vmin;
+}
+
+.Form_Container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.Container_Quis
+{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 100vh;
+}
 
 /* From to create question section */
 .Form_Title_Container
@@ -32,37 +251,452 @@ h4
     justify-content: center;
     align-items: center;
     grid-template-rows: auto auto;
-    /* row-gap: -30px; */
-    row-gap: 1vh;
-    transform: translate(33vw, 10vh);
-    /* transform: translate(19vmax, 10vh); */
-    /* top right bottom left*/
+    gap: 20vh;
+    transform: translate(0, 10vh);
     padding: 1vmin 0 1vmin 0;
-    width: 40vmax;
-    height: 12rem;
+    width: 60vmax;
+    height: 15rem;
     border-top: 1vmin solid rgb(224, 104, 57);
     border-radius: .7rem;
-    background: linear-gradient(20deg, rgba(120, 89, 100, 1.0), rgba(19,90,141,1));
+    background-color: rgba(19,90,141,1);
 }
 
 .Create_Title_Quis
-{
+{    
+    position: fixed;
+    top: 10vh;
+    left: 8vw;
+    right: 8vw;
+    word-break: break-all;
+    display: grid;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: none;
     margin-top: -4%;
-    height: 2.3rem;
-    min-width: 30vw;
+    height: 3rem;
+    min-width: 45vw;
     box-sizing: border-box;
+    background-color: white;
+    z-index: 2;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 10px 20px 5px 20px;
+    line-break: normal;
+    font-size: 1.8vmax;
+}
+
+.Create_Title_Quis:focus 
+{
+    outline: none;
 }
 
 .Create_Description_Quis
 {      
-    transform: translate(0, -40%);
-    height: 2.3rem;
-    min-width: 30vw;
+    position: fixed;
+    top: 10vh;
+    left: 8vw;
+    right: 8vw;
+    word-break: break-all;
+    display: grid;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10vh;
+    height: 4.5rem;
+    min-width: 45vw;
+    padding: 10px 20px 0 20px;
+    line-break: normal;
     box-sizing: border-box;
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 1rem;
+    resize: none;
 }
+
+.Create_Description_Quis:focus
+{
+    outline: none;
+}
+
+/* Placholder for title input field */
+.Create_Description_Quis:empty:not(:focus)::before
+{
+    content: "Deskripsi";
+    color: var(--PlaceHolderColor);
+    font-size: 1.9vw;
+}
+
+.Create_Description_Quis:empty:focus::after
+{
+    content: "Deskripsi";
+    color: var(--PlaceHolderColor);
+    font-size: 1.9vw;
+}
+/* Last part title input placeholder */
 
 input:focus 
 {
     outline: none;
 }
-/* End From to create question section */
+
+.Title_Style_Options_Container
+{
+    /* display: none; */
+    display: flex;
+    flex-direction: row;
+    gap: 10vmin;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transform: translate(8vw,0);
+    position: absolute;
+    z-index: -1;
+    margin-top: -23vh;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+.Title_Style_Options_Description
+{
+    display: flex;
+    flex-direction: row;
+    gap: 10vmin;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transform: translate(8vw,0);
+    position: absolute;
+    z-index: -1;
+    margin-top: 11vh;
+    transition: 900ms ease-out;
+    -webkit-transition: 900ms;
+    -moz-transition: 900ms;
+    -ms-transition: 900ms;
+    -o-transition: 900ms;
+}
+
+u 
+{
+    color: white;   
+}
+
+b > h4,i > h4,u > h4
+{
+    font-size: 1vmax;
+}
+
+.Save_Button_Container
+{
+    display: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: -180vh;
+}
+
+.Save_Button
+{
+    display: inline-block;
+    cursor: pointer;
+    height: 5vh;
+    width: 10vw;
+    transform: translate(0,2vh);
+    color: white;
+    background-color: rgb(224, 104, 57);
+    font-weight: bold;
+    font-size: 1vmax;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box; 
+}
+
+.Create_Question_Container
+{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgba(19,90,141,1);
+    padding: 0 0 1vmin 0;
+    width: 60vmax;
+    height: 20rem;
+    border-radius: .7rem;
+    border-left: 1vmin solid rgb(224, 104, 57);
+    box-sizing: border-box;
+}
+
+.Top_Distance
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 9vw;
+    transform: translate(0,-16vh);
+}
+
+.New_Question_Placeholder
+{   
+    display: grid; 
+    justify-content: space-around;
+    align-items: flex-start;
+    break-after: auto;
+    color: white;
+    border: none;
+    color: black;
+    width: 27vw;
+    height: 7vh;
+    padding: 0 -1vw 0 4vw;
+}
+
+.Admin_Answer_Options_Type
+{   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    padding: 0 3% 0 3%;
+    box-sizing: border-box;
+}
+
+.Create_Answer_Container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transform: translate(-35vmax,5vh);
+}
+
+.Admin_Create_Question_And_Answer_Container
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 4vh;
+    margin-top: -120vh;
+    transition: 900ms ease-out;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+.Question_Styling_Options_Container
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 5vw;
+    position: absolute;
+    transform: translate(1vmax,1vmax);
+    z-index: -1;
+ }
+
+ .OPen_Image 
+ {
+    cursor: pointer;
+ }
+
+.New_Question_Style_Type_Container
+{   
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    position: absolute;
+    top: -1vh;
+    left: 1.5vw;
+    z-index: -1;
+}
+
+.Answer_Type_Container 
+{
+    display: flex;
+    flex-direction: column;  
+    position: absolute;
+    top: 14vh;
+}
+
+/* Add this class using javascript */
+.Create_Answer_Options_Height_Width_Transition
+{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vh;
+    width: 11vw;
+    border-radius: 8px;
+    transition: 900ms ease-out;
+    -webkit-transition: 900ms;
+    -moz-transition: 900ms;
+    -ms-transition: 900ms;
+    -o-transition: 900ms;
+    padding: 0 1vw 0 1vw;
+}
+
+.Answer_Option_Container_Remove_Transition
+{
+    transition: 900ms ease-out;
+    -webkit-transition: 900ms;
+    -moz-transition: 900ms;
+    -ms-transition: 900ms;
+    -o-transition: 900ms;
+}
+
+.Show_Question_Styling_Options_Transition
+{
+    transition: 900ms ease-in-out;
+    -webkit-transition: 900ms;
+    -moz-transition: 900ms;
+    -ms-transition: 900ms;
+    -o-transition: 900ms;
+}
+
+.New_Checkbox_Element_Transition
+{
+    transition: 650ms ease-out;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+}
+
+.Italic_Button 
+{
+    font-style: italic;
+}
+
+.Select_Paragraph_Type_Answer 
+{
+    height: 17vh;
+    width: 35vw;
+}
+
+/* Styling for checkbox answer */
+.Checkbox_Type_Answer_Column_Container 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    position: absolute;
+    top: 14vh;
+}
+
+.Checkbox_Element_Column_Row_Container 
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.Checkbox_Type_Answer_Row_Container 
+{
+    display: flex;
+    flex-direction: row;
+    gap: 5vmin;
+}
+
+.Add_New_Checkbox_Answer 
+{
+    position: absolute;
+    top: -1vmax;
+    left: 50vmax;
+    font-size: 2.1vmin;
+    cursor: pointer;
+}
+
+.Select_Checkbox_Type_Answer 
+{
+    height: 3vh;
+    width: 3vw;
+}
+
+.Insert_Checkbox_Value 
+{
+    width: 35vw;
+    height: 4vh;
+    border: none;
+    background-color: rgba(19,90,141,1);
+    color: white;
+}
+
+.Show_Border_Bottom 
+{
+    border-bottom: 1px solid white;
+}
+
+.Insert_Checkbox_Value:hover 
+{
+    border-bottom: 1px solid white;
+}
+
+.Delete_Checkbox_Answer 
+{
+    font-size: 1.2rem;
+    color: white;
+    margin-left: 10vmin;
+    margin-top: 1vmin;
+    cursor: pointer;
+}
+
+.Add_New_Checkbox_Row_Container 
+{
+    display: flex;
+    flex-direction: row;
+    gap: 5vmin;
+    margin-top: 1vmin;
+    cursor: pointer;
+}
+
+.New_Checkbox_Text
+{
+    color: black;
+    font-weight: normal;
+    font-size: 1vmax;
+}
+/* End part checkbox styling */
+
+/* End javascript class */
+
+@media screen and (max-width: 660px)
+{
+    .Title_Style_Options_Container
+    {
+        transform: translate(10vmax,0);
+    }
+
+    .Title_Style_Options_Description
+    {
+        transform: translate(10vmax,0);
+    }
+
+    u 
+    {
+        color: white;   
+    }
+
+    b > h4,i > h4,u > h4
+    {
+        font-size: 2vmax;
+    }
+
+    .Create_Title_Quis
+    {
+        font-size: 2.6vmax;
+    }
+
+    p 
+    {
+        font-size: 2vw;
+    }
+
+    .Create_Question_Options_Container
+    {
+        transform: translate(6vw,-45vh);       
+    }
+}

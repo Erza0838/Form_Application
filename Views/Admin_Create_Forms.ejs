@@ -6,32 +6,129 @@
     <title>
         Halaman quis Admin 
     </title>
-    <link rel="stylesheet" href="/Admin_Form_Layout.css">
+    <link rel="stylesheet" href="/Admin_Form_Layout.css">    
+    <script src="https://code.jquery.com/jquery-3.5.1.js" defer></script>
 
+    <% if ( typeof scripts !== "undefined") { %>
+        <% scripts.forEach(function(script) { %>
+        <script src="/AdminCreateForm.js" type="module" defer></script>
+        <% }) %>
+    <% } %>
 </head>
+
 <body>
 
     <!-- Header section -->
-    <header class="Admin_Form_Header">
-        <h4>
-            Buat Pertanyaan
-        </h4>
-        <h4>
-            Daftar jawaban
-        </h4>
-        <h4>
-            Akun Pengguna
-        </h4>
-    </header>
+    <div class="Admin_Header_Information_Container" id="AdminHeaderInformationContainer">
+        <header class="Admin_Form_Information_Header">
+            <button class="Share-Button">
+                Kirim
+            </button>
+            <a href="/AdminProfile">
+                <button class="Share-Button" id="AdminProfilePageButton">
+                    Akun 
+                </button>
+            </a>
+        </header>
+        <header class="Admin_Form_Header">
+            <h4 id="AnswerOptions">
+                Buat Pertanyaan
+            </h4>
+            <h4>
+                Daftar jawaban
+            </h4>
+            <h4>
+                Setelan
+            </h4>
+        </header>
+    </div>
     <!-- End Header section -->
 
-    <!--  -->
-    <div class="Form_Title_Container">
-        <input type="text" placeholder="Quis tanpa judul" class="Create_Title_Quis">
-        <input type="text" placeholder="Deskripsi Quis"  class="Create_Description_Quis">
-        <!-- <div class="Create_Form_Question_Title">
-        </div> -->
+    <!-- Div to create warning if title length greater than 161 -->
+    <div class="Title_Warning_Container">
+        <div class="Warning_Title" id="ShowWarningMessage">
+            Judul terlalu panjang
+        </div>
+    </div>
+    
+    <!-- Div to create warning if description length greater than 256 -->
+    <div class="Description_Warning_Container">
+        <div class="Warning_Description" id="ShowWarningMessageDescription">
+            Deskripsi terlalu panjang
+        </div>
     </div>
 
+    <div class="Create_Question_Options_Container" id="AdminQuestionOptions">
+        <div class="Options_Container">
+            <p class="Options_Question" id="AddQuestionOption">Tambahkan soal</p>
+            <p class="Options_Insert_Image">Masukkan gambar</p>
+        </div>
+    </div>
+
+    <form action="/SaveFormITitleAndDescription" method="POST" class="Form_Container" id="QuestionFormElement">
+    <!-- <form class="Form_Container" id="QuestionFormElement"> -->
+        <div class="Container_Quis" id="BodyElementId">
+            <div class="Form_Title_Container" id="FormContainerId">
+                <input type="text" placeholder="Judul" class="Create_Title_Quis" id="TitleFormClick" name="TitleInputValue" autocomplete="off">
+                <div class="Title_Style_Options_Container" id="StyleOptionContainerId">
+                    <b class="Button_Options">
+                        <h4>B</h4>
+                    </b>
+                    <i>
+                        <h4>I</h4>
+                    </i>
+                    <u>
+                        <h4>U</h4>
+                    </u>
+                    <i>
+                        <h4>T</h4>
+                    </i>
+                </div>
+                <textarea  name="DescriptionInputValue" placeholder="Deskripsi" class="Create_Description_Quis" id="IdFormClick" cols="30" rows="10"></textarea>
+                <div class="Title_Style_Options_Description" id="DescriptionStyleOptionContainer">
+                    <b class="Button_Options">
+                        <h4>B</h4>
+                    </b>
+                    <i>
+                        <h4>I</h4>
+                    </i>
+                    <u>
+                        <h4>U</h4>
+                    </u>
+                    <i>
+                        <h4>T</h4>
+                    </i>
+                </div>
+                
+            <!-- Create new question form -->    
+        </div>
+
+        <div class="Admin_Create_Question_And_Answer_Container" id="AdminCreateQuestionAnswer">
+            <!-- <div class="Create_Question_Container">
+                <div class="Top_Distance">
+                    <div class="New_Question_Style_Type_Container">
+                        <p>B</p>
+                        <p class="Italic_Button">I</p>
+                        <p class="Italic_Button">U</p>
+                        <p class="Italic_Button">T</p>
+                    </div>  
+                    <textarea id="NewQuestionTextArea" name="AdminInputQuestion" class="New_Question_Placeholder" placeholder="Pertanyaan"></textarea>  
+                    <p>Gambar</p>
+                    <select id="AdminSelectAnswerType" name="" class="Admin_Answer_Options_Type">
+                        <option id="ChangeOption" value="Jawaban singkat">Jawaban singkat</option>
+                        <option id="ChangeOption" value="Paragraf">Paragraf</option>
+                        <option id="ChangeOption" value="Kotak centang">Kotak centang</option>
+                        <option id="ChangeOption" value="Pilihan ganda">Pilihan ganda</option>
+                    </select>
+                </div>
+            </div> -->
+        </div>
+    </form>
+<!-- 
+    <div class="Save_Button_Container" id="SaveQuestionButtonContainer" style="display: flex;">
+        <button>
+            Simpan
+        </button>
+    </div> -->
 </body>
 </html>

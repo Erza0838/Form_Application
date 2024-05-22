@@ -1,10 +1,11 @@
 {
   "name": "databases_connection",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "Koneksi database",
   "main": "StoreAdminData.js\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[D\u001b[D\u001b[D\u001b[A\u001b[F\u001b[B\u001b[F",
   "scripts": {
-    "start": "nodemon StoreAdminData.js",
+    "start": "nodemon StoreAdminData",
     "test": "\u001b[B\u001b[A\u001b[A\u001b[B\u001b[D\u001b[A\u001b[B\u001b[D\u001b[D\u001b[D\u001b[B\u001b[B\u001b[A\u001b[A\u001b[H\u001b[A\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B\u001b[A\u001b[A\u001b[C\u001b[A\u001b[B\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Centry\u001b[Cpoint\u001b[\u001b[C\u001b[F\u001b[B\u001b[F\u001b[B\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"
   },
   "keywords": [
@@ -15,10 +16,27 @@
   "author": "Muhamad erza",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.8",
+    "bcryptjs": "^2.4.3",
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dns": "^0.1.2",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "mysql": "^2.18.1"
+    "express-mysql-session": "^3.0.0",
+    "express-session": "^1.17.3",
+    "http-proxy-agent": "^7.0.0",
+    "jsdom": "^24.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "method-override": "^3.0.0",
+    "mysql2": "^3.6.0",
+    "node-fetch": "^2.6.13"
   },
   "devDependencies": {
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.0",
     "nodemon": "^3.0.1"
   }
 }

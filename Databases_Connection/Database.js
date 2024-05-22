@@ -1,21 +1,14 @@
 // Express require library
-const AcceptAdminData = require("./StoreAdminData.js")
-const express = require("express")
-const app = express()
-// const router =  express.Router()
-const {createPool} = require("mysql2")
-const ConnectionPort = 3001
-const server = require("http").createServer(app)
-const bodyParser = require("body-parser")
+//  const {createPool} = require("mysql2")
+const mysql = require("mysql")
+const env = require("dotenv").config()
 
-// Function for starting connection to mysql
-const mysqlConnection =  createPool(
-{
+// Function for starting connection to MYSQL
+const mysqlConnection =  mysql.createConnection(
+{   
     host: "localhost",
     user: "root",
     password: "zeva-BE-64bit",
     database : "quis-schema"
 })
-// Last function section
-
 module.exports = mysqlConnection

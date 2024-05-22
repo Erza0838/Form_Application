@@ -3,13 +3,66 @@ body
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* background-color: rgba(228, 176, 176, .7); */
+    background-color: rgba(191, 191, 191, .8);
+}
+
+button 
+{
+    cursor: pointer;
+}
+
+/* Random code container section */
+.Random-Code-Container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    transform: translate(0,7vh);
+}
+.Random-Code
+{   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: linear-gradient(20deg, rgba(120, 89, 100, 1.0), rgba(19,90,141,1));
+    z-index: 2;
+    color: white;
+    width: 15vmax; 
+    height: 10vh;
+    position: absolute;
+    box-shadow: 11px 11px 5px 0px rgba(255,241,241,0.27);
+    -webkit-box-shadow: 11px 11px 5px 0px rgba(255,241,241,0.27);
+    -moz-box-shadow: 11px 11px 5px 0px rgba(255,241,241,0.27);
+}
+
+.Copy_Icon
+{
+    z-index: 2;
+    position: absolute;
+    margin-left: 15.5vmin;
+    cursor: pointer;
+    width: 4vmin;
+    height: 4vmin;
+}
+/* End of random code container section */
+
+.center-Form-Container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .Login_Form_Container
 {   
     border-radius: 10px;
-    margin-top: 7vh;
-    margin-left:  calc(33vmax - 18px);
+    margin-top: 14vh;
     box-sizing: border-box;
     display: grid;
     grid-auto-rows: 10rem;
@@ -28,7 +81,7 @@ div.Input-Name
     justify-content: start;
     align-content: start;
     grid-template-rows: auto auto;
-    margin-top: 37vh;
+    margin-top: 39vh;
 }
 
 .Input-Name > label
@@ -176,6 +229,25 @@ select.Select_Level_Type:focus
 }
 /* End of Select user level section */
 
+/* Input random code */
+div.Input-Code 
+{
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto auto;
+    justify-content: start;
+    align-content: start;
+    transform: translate(0,15vh);
+}
+
+.Input_Random_Code 
+{
+    width: calc(16vw - 2rem);   
+    height: 4vh;
+    border: none;
+    border-radius: 5px;
+}
+
 /* Login button section */
 .Login_Button
 {
@@ -191,7 +263,7 @@ select.Select_Level_Type:focus
 /* End of  Login button section*/
 
 /* Media query sction  min width and min hight*/
-@media screen and (width < 820px) and (height < 900px)
+@media screen and (width < 795px) and (height < 900px)
 {
     body
     {
@@ -200,21 +272,53 @@ select.Select_Level_Type:focus
         box-sizing: border-box;
         background-color: rgba(191, 191, 191, .8);
     }
+
+    /* Random code container section */
+    .Random-Code-Container
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: relative;
+        /* transform: translate(0,7vh); */
+    }
+    .Random-Code
+    {   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: linear-gradient(20deg, rgba(120, 89, 100, 1.0), rgba(19,90,141,1));
+        z-index: 2;
+        color: white;
+        width: 20vmax; 
+        height: 10vh;
+        position: absolute;
+        box-shadow: 11px 11px 5px 0px rgba(255,241,241,0.27);
+        -webkit-box-shadow: 11px 11px 5px 0px rgba(255,241,241,0.27);
+        -moz-box-shadow: 11px 11px 5px 0px rgba(255,241,241,0.27);
+    }
+    /* End of random code container section */
+    .center-Form-Container
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+    
     .Login_Form_Container
     {   
         border-radius: 10px;
-        margin-top: 10vmax;
-        margin-left: 18vw;
+        margin-top: 15vmax;
         box-sizing: border-box;
-        display: flex;
         display: grid;
         grid-auto-rows: 10rem;
-        justify-items: center;
         align-items: center;
-        /* width: 67vmin; */
+        justify-items: center;
         width: 40vmax;
-        /* height: 80vmax; */
-        /* height: 90vmin; */
         height: 71vmax;
         background: linear-gradient(20deg, rgba(120, 89, 100, 1.0), rgba(19,90,121,1),rgba(120, 89, 100, 1.0));
     }
@@ -228,7 +332,7 @@ select.Select_Level_Type:focus
         justify-content: start;
         align-content: start;
         grid-template-rows: auto auto;
-        transform: translate(10%,0);
+        transform: translate(10%,-3vh);
     }
     .Input-Name > label
     {
@@ -239,11 +343,11 @@ select.Select_Level_Type:focus
     input.Input_Type_Name
     {   
         display: block;
-        /* width: 40vw;    */
         width: 29vmax;
         height: 4vh;
         border: none;
         border-radius: 5px;
+        /* transform: translate(0,-3vh); */
         /* padding-left: 10rem; */
     }
     /* End of input name section */
@@ -257,7 +361,7 @@ select.Select_Level_Type:focus
         grid-template-rows: auto auto;
         justify-content: start;
         align-content: start;
-        transform: translate(10%,20%);
+        transform: translate(10%,1vh);
     }
 
     .Input-Age > label
@@ -285,7 +389,7 @@ select.Select_Level_Type:focus
         justify-content: start;
         align-content: start;
         grid-template-rows: auto auto;
-        transform: translate(10%,6vh);
+        transform: translate(10%,4vh);
     }
 
     .Input-Gender > label
@@ -350,7 +454,6 @@ select.Select_Level_Type:focus
 
     select.Select_Level_Type
     {
-        /* width: 20vw; */
         width: 29vmax;
         height: 4vh;
         border: none;
@@ -358,11 +461,30 @@ select.Select_Level_Type:focus
     }
     /* Select user level section */
 
+    /* Input random code */
+    div.Input-Code 
+    {
+        display: grid;
+        gap: 1vmin;
+        justify-content: start;
+        align-content: start;
+        grid-template-rows: auto auto;
+        transform: translate(10%,10vh);
+    }
+
+    .Input_Random_Code 
+    {
+        width: 29vmax;
+        height: 4vh;
+        border: none;
+        border-radius: 5px;
+    }
+
     /* Login button section */
     .Login_Button
     {
         display: inline-block;
-        transform: translate(10%,14vh);
+        transform: translate(10%,12vh);
         width: 20vw;
         height: 4vh;
         border: none;
@@ -370,5 +492,5 @@ select.Select_Level_Type:focus
         color: black;
         font-size: 2vmax;
     }
-/* End of  Login button section*/
 }
+/* End of  Login button section*/

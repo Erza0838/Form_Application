@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Halaman profile admin
+    </title>
+        <link rel="stylesheet" href="/Admin_Edit_Page.css">
+
+    <% if ( typeof scripts !== "undefined") { %>
+        <% scripts.forEach(function(script) { %>
+        <script src="/AutoRefreshEditPage.js" type="module" defer></script>
+        <% }) %>
+    <% } %>
+</head>
+<body> 
+    <div class="Welcome_Admin_Container">
+        <% EditAdminInformation.forEach((EditProfile) => { %>
+        <h1 class="Welcome_Admin" id="NewWelcomeGreeting">Selamat datang <%= EditProfile.Admin_Name %></h1> 
+        <% }) %>
+    </div>
+
+    <form action="/UpdateAdminProfile" method="POST">
+    <!-- Admin information -->
+    <div class="Admin_List_Information_Container">
+        <div class="Admin_List_Information">
+            <ul class="List_Information_Container">
+                <li>
+                    <label>Nama</label>
+                    <% EditAdminInformation.forEach((EditProfile) => { %>
+                    <input type="text" name="AdminNewName" class="Admin_Name_Value" id="InputValueName" value=<%= EditProfile.Admin_Name %>>
+                    <% }) %>
+                </li>
+
+                <li>
+                    <label>Umur</label>
+                    <% EditAdminInformation.forEach((EditProfile) => { %>
+                    <input type="number" name="AdminNewAge" class="Admin_Name_Value" id="InputValueName" value=<%= EditProfile.Admin_Age %>>
+                    <% }) %>
+                </li>
+
+                <li class="Gender_List_Item">
+                    <label>Jenis kelamin</label>
+                    <% EditAdminInformation.forEach((EditProfile) => { %>
+                    <input name="AdminNewGender" class="Admin_Name_Value" id="InputValueName" value=<%= EditProfile.Admin_Gender %>>
+                    <% }) %>
+                </li>
+
+                <li>
+                    <label>Email</label>
+                    <% EditAdminInformation.forEach((EditProfile) => { %>
+                    <input name="AdminNewEmail" class="Admin_Name_Value" id="InputValueName" value=<%= EditProfile.Admin_Email %>>
+                    <% }) %>
+                </li>
+
+                <li>
+                    <label>Level</label>
+                    <% EditAdminInformation.forEach((EditProfile) => { %>
+                    <input class="Admin_Name_Value" id="InputValueName" value=<%= EditProfile.User_Level %> disabled>
+                    <% }) %>
+                </li>
+
+                <li>
+                    <label>Kode</label>
+                    <% EditAdminInformation.forEach((EditProfile) => { %>
+                    <input name="AdminNewNameValue" class="Admin_Name_Value" id="InputValueName" value=<%= EditProfile.Admin_Code %> disabled>
+                    <% }) %>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Edit button -->
+    <div class="Button_Container">
+        <button id="AdminEditButton" type="submit" id="SaveButton">
+            Simpan
+        </button>
+    </div>
+    </form>
+</body>
+</html>

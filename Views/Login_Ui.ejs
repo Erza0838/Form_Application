@@ -2,21 +2,34 @@
 <html lang="en">    
 <head>
     <meta charset="UTF-8" content="origin">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         Halaman login
     </title>
-    <!-- <link rel="stylesheet" href="../public/Login_Layout.css"> -->
     <link rel="stylesheet" href="/Login_Layout.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" defer></script>
+
+    <% if ( typeof scripts !== "undefined") { %>
+        <% scripts.forEach(function(script) { %>
+        <script src="/LoginAdmin.js" type="module" defer></script>
+        <% }) %>
+    <% } %>
 </head>
 <body>
     
-    <!-- Container untuk membungkus form login -->
+    <!-- Random code container -->
+    <div class="Random-Code-Container" id="Display_Admin_Random_Code">
+        <div class="Random-Code" id="UserRandomCode">
+            <P class="ShowRandomCode" id="ShowRandomCode"></P>
+        </div>
+        <img src="/copy.png" class="Copy_Icon" id="ClickCopyIcon">
+    </div>
+
+ <!-- Container untuk membungkus form login -->
+<div class="center-Form-Container">
     <div class="Login_Form_Container">
-        <!-- <form action="/AdminPage" method="POST"> -->
-        <form action="/AdminPost" method="POST">
-        <!-- <form action="/AdminPage" method="POST"> -->
-            <!-- Input name -->
+        <form action="/SaveAdminPageForm" method="POST">
+        <!-- Input name -->
             <div class="Input-Name">
                 <label>Masukkan nama</label>   
                 <input type="text" name="UserInputName" id="UserInputNameId" class="Input_Type_Name" required autocomplete="off">
@@ -41,86 +54,30 @@
             <!-- Input email -->
             <div class="Input-Email">
                 <label >Masukkan email</label>
-                <input type="email" name="UserInputEmails" id="UserInputEmailId" class="Input_Type_Email" required autocomplete="off">
+                <input type="email" name="UserInputEmail" id="UserInputEmailId" class="Input_Type_Email" required autocomplete="off">
             </div> 
 
               <!-- Select Level -->
               <div class="Input-Level">  
                 <label >Level</label>
-                <select name="UserInputLevels" id="UserInputLevelsId" class="Select_Level_Type" required>
+                <select name="UserInputLevels" id="UserInputLevelsId" class="Select_Level_Type" required placeholder="Level">
                     <option value=""></option>
                     <option value="User">User</option>
                     <option value="Admin">Admin</option>
                 </select>
             </div>
 
+            <!-- Input code acak -->
+            <div class="Input-Code">
+                <input type="text" name="UserInputRandomCode" id="UserInputRandomCode" class="Input_Random_Code" required autocomplete="off" placeholder="Masukkan code">
+            </div> 
+
             <!-- Login button -->
-            <button class="Login_Button" id="SubmitLoginButton" name="UserSubmitData" type="submit">
+            <button class="Login_Button" id="SubmitLoginButton" type="submit">
                 Login
             </button>
         </form>
     </div>
-
-    <script type="module">
-
-    // Variable for save tag input data section
-    const UserNameInputElement = document.getElementsByName("UserInputName").value
-    const UserInputAgeElement = document.getElementsByName("UserInputAge").value
-    const UserSelectGendersElement = document.getElementsByName("UserInputGenders").value
-    const UserInputEmailElement = document.getElementsByName("UserInputEmails").value
-    const UserSelectLevelsElement = document.getElementsByName("UserInputLevels").value
-    const SubmitLoginButton = document.getElementById("SubmitLoginButton")
-    // end of input data section
-
-    // Class for object template input tag
-    class InputValidation
-    {
-        constructor(ButtonSubmit)
-        {   
-            this.SubmitEvent = ButtonSubmit
-        }
-        EnabledLoginButton()
-        {   
-            this.SubmitEvent.addEventListener("submit", async () =>
-            {   
-                // this.SubmitEvent.preventDefault()
-                const ResponseResult = await fetch("http://localhost:3001/Login", 
-                {
-                    // method: "GET",
-                    method: "POST",
-                    headers: 
-                    {
-                        "Content-Type" : "application/json"
-                    },
-                    body: JSON.parse(
-                    JSON.stringify(
-                    {
-                        InputName : UserNameInputElement,
-                        InputAge : UserInputAgeElement,
-                        SelectGenders : UserSelectGendersElement,
-                        InputEmail : UserInputEmailElement,
-                        SelectLevels : UserSelectLevelsElement
-                    }))
-                }).then( (ResponseResultInput) => 
-                {   
-                    console.log(ResponseResultInput.json())
-                    return ResponseResultInput.json()
-                })
-            }, {once: true})     
-        }
-        // End of method
-    }
-    // Last class part
-
-    // Function to run method enabled login button
-    // async 
-    function InputValidationCorrect()
-    {
-        let EnterInputDataArguments = new InputValidation(SubmitLoginButton)
-        EnterInputDataArguments.EnabledLoginButton() 
-    }
-    InputValidationCorrect()
-    </script>
-
+</div>
 </body>
 </html>
